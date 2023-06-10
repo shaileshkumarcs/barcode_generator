@@ -1,5 +1,5 @@
 <?php 
-include('include/header.php');
+// include('include/header.php');
 ?>
 <title>Barcode Generator in PHP</title>
 <style>
@@ -19,7 +19,7 @@ img.barcode{
 }
 
 </style>
-<?php include('include/container.php');?>
+<?php //include('include/container.php');?>
 <div class="container">
 	<h2>Barcode Generator in PHP</h2>	
 	<br>
@@ -71,11 +71,18 @@ img.barcode{
 		 <?php
 		 for($i= 0; $i < 5; $i++){
 			if(isset($_POST['generateBarcode'])) {
-				$barcodeText = trim($_POST['barcodeText']);
-				$barcodeType=$_POST['barcodeType'];
-				$barcodeDisplay=$_POST['barcodeDisplay'];
-				$barcodeSize=$_POST['barcodeSize'];
-				$printText=$_POST['printText'];
+				// $barcodeText = trim($_POST['barcodeText']);
+				// $barcodeType=$_POST['barcodeType'];
+				// $barcodeDisplay=$_POST['barcodeDisplay'];
+				// $barcodeSize=$_POST['barcodeSize'];
+				// $printText=$_POST['printText'];
+
+				$barcodeText = "test123";//trim($_POST['barcodeText']);
+                $barcodeType= "code128";//$_POST['barcodeType'];
+                $barcodeDisplay= "horizontal";//$_POST['barcodeDisplay'];
+                $barcodeSize="20";//$_POST['barcodeSize'];
+                $printText= "true";
+
 				if($barcodeText != '') {
 					echo '<h4>Barcode:</h4>';
 					echo '<div class="barcodebox"><p class="item-text">Hello</p><img class="barcode" alt="'.$barcodeText.'" src="barcode.php?text='.$barcodeText.'&codetype='.$barcodeType.'&orientation='.$barcodeDisplay.'&size='.$barcodeSize.'&print='.$printText.'"/></div>';
